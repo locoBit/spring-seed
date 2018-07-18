@@ -1,4 +1,7 @@
 create table users (
-    id int not null,
-    name varchar(100) not null
+    id int not null primary key,
+    first_name varchar(100) not null
 );
+
+
+select * from users;
