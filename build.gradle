@@ -21,6 +21,8 @@ flyway {
     user = 'postgres'
     password = 'postgres'
     schemas = [ 'public' ]
+	table = 'schema_history'
+	baselineOnMigrate = true
 }
 
 

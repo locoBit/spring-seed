@@ -10,19 +10,19 @@ public class User {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
-    private String first_name;
+    private String firstName;
 
     protected User() {}
 
-    public User(String first_name) {
-        this.first_name = first_name;
+    public User(String firstName) {
+        this.firstName = firstName;
     }
 
     @Override
     public String toString() {
       return String.format(
-          "User[id=%id], first_name='%s",
-          id, first_name
+          "User[id=%id], firstName='%s",
+          id, firstName
         );
     }
 }
