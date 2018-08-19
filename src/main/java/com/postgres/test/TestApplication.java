@@ -15,41 +15,5 @@ public class TestApplication {
 
 	public static void main(String[] args) {
 	  SpringApplication.run(TestApplication.class);
-	}
-
-	@Bean
-  public CommandLineRunner demo(UserRepository repository) {
-	  return (args) -> {
-      repository.save(new User("Jack"));
-      repository.save(new User("Jack"));
-
-      // fetch all customers
-      log.info("Customers found with findAll():");
-      log.info("-------------------------------");
-      for (User customer : repository.findAll()) {
-        log.info(customer.toString());
-      }
-      log.info("");
-
-      // fetch an individual customer by ID
-      repository.findById(1L)
-          .ifPresent(customer -> {
-            log.info("Customer found with findById(1L):");
-            log.info("--------------------------------");
-            log.info(customer.toString());
-            log.info("");
-          });
-
-      // fetch customers by last name
-      log.info("Customer found with findByLastName('Bauer'):");
-      log.info("--------------------------------------------");
-      repository.findByfirstName("Bauer").forEach(bauer -> {
-        log.info(bauer.toString());
-      });
-      // for (Customer bauer : repository.findByLastName("Bauer")) {
-      // 	log.info(bauer.toString());
-      // }
-      log.info("");
-    };
   }
 }
