@@ -39,3 +39,6 @@ databaseChangeLog:
         - column:
             name: username
             type: varchar(8)
+- include:
+      file: create-user.yaml
+      relativeToChangelogFile: true
